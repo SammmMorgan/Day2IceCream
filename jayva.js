@@ -34,17 +34,60 @@ const vessels = [
     }
 ]
 const toppings = [{
-    name: 'Sprinkles',
+    name: 'Sprinkiles',
     price: .25,
     quantity: 0,
 },
 {
-    name: 'Chocolate Chips',
+    name: 'Chocky Chips',
     price: .25,
     quantity: 0
 },
 {
-    name: 'Gummy Worms',
+    name: 'Worms',
     price: .5,
     quantity: 0
 }]
+
+
+function orderVessels(vesselType) {
+    // console.log('vessel type', vesselType);
+
+    const vesselDesired = vessels.find(vessel => vessel.name == vesselType)
+    vesselDesired.quantity++
+    // console.log(`this is the type of vessel, ${vesselDesired.name}`);
+    cartTotal()
+}
+
+function orderToppings(toppingType) {
+    // console.log('Topping type', toppingType);
+
+    const toppingDesired = toppings.find(topped => topped.name == toppingType)
+    toppingDesired.quantity++
+    // console.log(`this is the type of topping, ${toppingDesired.name}`);
+    cartTotal()
+}
+
+function orderIceCream(iceCreamType) {
+    // console.log('ice cream type', iceCreamType);
+
+    const iceCreamDesired = iceCream.find(cream => cream.name == iceCreamType)
+    iceCreamDesired.quantity++
+    // console.log(`this is the type of vessel, ${iceCreamDesired.name}`);
+    cartTotal()
+}
+
+function cartTotal() {
+    let total = 0
+
+    iceCream.forEach(iceCreamtotal => { total += iceCreamtotal.price * iceCreamtotal.quantity })
+
+    toppings.forEach(toppingTotal => { total += toppingTotal.price * toppingTotal.quantity })
+
+    vessels.forEach(vesselTotal => { total += vesselTotal.price * vesselTotal.quantity })
+
+
+
+    console.log('total', total)
+}
+
