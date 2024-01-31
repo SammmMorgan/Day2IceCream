@@ -86,8 +86,17 @@ function cartTotal() {
 
     vessels.forEach(vesselTotal => { total += vesselTotal.price * vesselTotal.quantity })
 
-
-
     console.log('total', total)
+
+    const cartTotalElement = document.getElementById('priceTotal')
+    cartTotalElement.innerText = total
+    drawCart()
 }
+
+function drawCart() {
+    let cartContentElement = ''
+    cartContentElement = document.getElementById('itemNames')
+    cartContentElement.innerHTML = `<p>Ice Cream Flavor | qty: $() </p>`
+}
+
 
